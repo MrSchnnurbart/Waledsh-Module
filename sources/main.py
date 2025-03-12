@@ -1,11 +1,11 @@
 import pygame
 
 
-def Entity(longueur, largeur, image):
+def Entity(player_longueur, player_largeur, player_image, obstacle_longueur, obstacle_largeur, obstacle_image):
     class Player:
         def __init__(self, x, y):
-            self.image = pygame.image.load(image) 
-            self.image = pygame.transform.scale(self.image, (longueur, largeur))
+            self.image = pygame.image.load(player_image) 
+            self.image = pygame.transform.scale(self.image, (player_longueur, player_largeur))
             self.rect = self.image.get_rect(topleft=(x, y))
             self.speed = 5 
             self.gravity = 1  # Intensité de la gravité
@@ -53,8 +53,8 @@ def Entity(longueur, largeur, image):
 
     class Obstacle:
         def __init__(self, x, y):
-            self.image = pygame.image.load(image) 
-            self.image = pygame.transform.scale(self.image, (1000, 1000))
+            self.image = pygame.image.load(obstacle_image) 
+            self.image = pygame.transform.scale(self.image, (obstacle_longueur, obstacle_largeur))
             self.rect = self.image.get_rect(topleft=(x, y))
             self.speed = 0 
             self.gravity = 0  # Intensité de la gravité
@@ -84,15 +84,15 @@ def Entity(longueur, largeur, image):
 
 
 # Fonction pour afficher l'arrière-plan et gérer le jeu
-def Background(longueur, largeur, image, nom):
+def Background(longueur, largeur, background_image, nom):
     pygame.init()
 
-    Player, Obstacle = Entity(longueur, largeur, image)  # Correction de la ligne 86
+    Player, Obstacle = Entity(100, 100, "exemples/assets/chevalier.png", 1000, 1000, "exemples/assets/fox.jpg")
     player = Player(200, 200)
 
     ground = Obstacle(0, 600)  # Sol pour que le joueur puisse marcher
 
-    fond = pygame.image.load(image)
+    fond = pygame.image.load(background_image)
     fond = pygame.transform.scale(fond, (longueur, largeur))
 
     pygame.display.set_caption(nom)
@@ -120,5 +120,4 @@ def Background(longueur, largeur, image, nom):
     pygame.quit()
 
 
-Background(1920, 1080, "exemples/assets/fox.jpg", "Scène1")
-Entity(100, 100, "exemples/assets/fox.jpg")
+Background(1920, 1080, "exemples/assets/header.jpg", "Scène1")
