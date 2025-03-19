@@ -146,8 +146,8 @@ Game(
     num_obstacles=3,
     obstacle_positions=[(300, 500), (700, 600), (1000, 700)],
     num_finals=1,
-    final_positions=[(1100, 500)],
+    final_positions=[(1050, 550)],
     player_longueur=100, player_largeur=100, player_image="exemples/assets/chevalier.png",
     obstacle_longueur=200, obstacle_largeur=100, obstacle_image="exemples/assets/grass.jpg",
-    final_longueur=100, final_largeur=100, final_image="exemples/assets/fox.jpg"
+    final_longueur=150, final_largeur=150, final_image="exemples/assets/porte.png"
 )
