@@ -139,15 +139,3 @@ def Game(longueur, largeur, background_image, nom, num_players, player_positions
         clock.tick(60)
     
     pygame.quit()
-
-Game(
-    1920, 1080, "exemples/assets/sky.jpg", "Scène1", num_players=1, 
-    player_positions=[(300, 200)],
-    num_obstacles=3,
-    obstacle_positions=[(300, 500), (700, 600), (1000, 700)],
-    num_finals=1,
-    final_positions=[(1050, 550)],
-    player_longueur=100, player_largeur=100, player_image="exemples/assets/chevalier.png",
-    obstacle_longueur=200, obstacle_largeur=100, obstacle_image="exemples/assets/grass.jpg",
-    final_longueur=150, final_largeur=150, final_image="exemples/assets/porte.png"
-)
